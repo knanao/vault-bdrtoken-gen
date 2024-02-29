@@ -9,7 +9,7 @@ This supports only for Kubernetes Auth so far, and Google Cloud Storage(GCS) and
 - `--service-account-token-path` `(string: "/var/run/secrets/kubernetes.io/serviceaccount/token")` - Path to where your application's Kubernetes service account token is mounted,
 - `--batch-token-role` `(string: required)` - Token role for failover operations. Its type should be `batch`.
 - `--batch-token-ttl` `(string: "8h")` - TTL of the batch DR operation token. When executing as Cronjob, make sure that the overlap period of two or more tokens is long enough for the DR operation.
-- `--bucket-url` `(string: required)`- The URL of Cloud Storage. Currently, Google Cloud Storage(GCS) and Amazon S3 are only supported. e.g. `gs://vault-bdrtoken`
+- `--bucket-url` `(string: required)` - The URL of Cloud Storage. Currently, Google Cloud Storage(GCS) and Amazon S3 are only supported. e.g. `gs://vault-bdrtoken`
 
 ## Environment variables
 
