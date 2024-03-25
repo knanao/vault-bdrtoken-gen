@@ -23,6 +23,23 @@ spec:
               value: ${VAULT_ADDR}
             - name: TZ
               value: Asia/Tokyo
+            # When enabling TLS
+            - name: VAULT_CACERT
+              value: /vault/userconfig/vault-tls/ca.crt
+            # When using TLS with Client-side Certificate Authentication
+            - name: VAULT_CLIENT_CERT
+              value: /vault/userconfig/vault-tls/tls.crt
+            - name: VAULT_CLIENT_KEY
+              value: /vault/userconfig/vault-tls/tls.key
+            volumeMounts:
+            - mountPath: /vault/userconfig/vault-tls
+              name: vault-tls
+              readOnly: true
+          volumes:
+          - name: vault-tls
+            secret:
+              defaultMode: 420
+              secretName: ${VAULT_TLS_SECRET_NAME}
           restartPolicy: OnFailure
 ---
 apiVersion: v1
