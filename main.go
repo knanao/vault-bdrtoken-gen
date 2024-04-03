@@ -84,6 +84,10 @@ func main() {
 		logger.Error("Unable to lookup the token although completed the token created", err)
 		os.Exit(1)
 	}
+	if secret.Data == nil {
+		logger.Error("No token data was returned")
+		os.Exit(1)
+	}
 
 	var (
 		issueTime  string
