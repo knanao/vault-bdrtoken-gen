@@ -1,5 +1,5 @@
-BUILD_VERSION=v0.1.0
-REPOSITORY=knanao/vault-bdrtoken-gen
+BUILD_VERSION=v0.1.1
+REPOSITORY=ghcr.io/knanao/vault-bdrtoken-gen
 
 .PHONY: build
 build:
